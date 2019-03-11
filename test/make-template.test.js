@@ -2,20 +2,7 @@ const test = QUnit.test;
 
 QUnit.module('make html template literal');
 
-function makeHtmlTemplate(character){
-    const html= /*html*/`
-        <li class="card">
-            <h1>${character.name}</h1>
-            <img src="${character.image}">
-            <h2>Status: ${character.status}</h2>
-            <h2>Species: ${character.species}</h2>
-        </li>
-        `;
-
-    const template = document.createElement('template');
-    template.innerHTML = html;
-    return template.content;
-}
+import { makeHtmlTemplate } from '../src/gallery-components.js';
 
 test('set up basic template html', function(assert) {
     //arrange
