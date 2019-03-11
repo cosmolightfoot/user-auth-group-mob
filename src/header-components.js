@@ -27,17 +27,23 @@ export function makeUserHtml(user){
 
 const headerContainer = document.getElementById('header-container');
 
-export function loadHeader(){
+export default function loadHeader(options){
     const dom = makeHeaderHtml();
-
+    const header = dom.querySelector('header');
     headerContainer.appendChild(dom);
+
+    if(options && options.skipAuth) {
+        return;
+    } 
 
     auth.onAuthStateChanged(user => {
         if(user) {
-            console.log('there is a user!!!');
+            const userDom = makeUserHtml(user);
+            headerContainer.appendChild(userDom);
         }
         else {
             //no user
+            console.log('no user go home');
         }
     });
 
