@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+#search-page {
+    border: 2px solid black;
+    display: flex;
+    justify-content: flex-start;
+    background-color: cadetblue;
+}
+
+#gallery-container {
+  
+    
+}
+
+li img {
+    width: 35%;
+
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    border: 2px black solid;
+    width: 20%;
+    align-items: center;
+   margin: 3px;
+}
+
+li h1 {
+    font-size: 70%;
+}
+
+li h2 {
+    font-size: 50%;
+}

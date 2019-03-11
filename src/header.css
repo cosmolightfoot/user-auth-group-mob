@@ -1,0 +1,26 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1.header-title {
+    margin-left: 20px;
+    flex-grow: 2
+}
+
+.user-profile button {
+    margin-left: 5px;
+}
+
+.user-profile img {
+    width: 32px;
+    border-radius: 100%;
+    margin-right: 5px;
+}

@@ -46,7 +46,7 @@ export default function loadHeader(options){
                 auth.signOut();
             });
 
-            headerContainer.appendChild(userDom);
+            header.appendChild(userDom);
         }
         else {
             //no user
