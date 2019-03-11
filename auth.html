@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>	    
+    <link rel="stylesheet" href="./src/main.css">
+    <link rel="stylesheet" href="./src/auth.css">
+    <link rel="stylesheet" href="./src/header.css">
 </head>
 <body>
+    <div id="header-container"></div>
+    <main>
+        <p>Sign to view books</p>
+        <div id="firebaseui-auth-container"></div>
+    </main>    
     
+    <script type="module" src="src/auth.js"></script>
 </body>
 </html>
