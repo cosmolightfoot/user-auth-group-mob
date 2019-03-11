@@ -1,3 +1,3 @@
 import './html-equal.js';
-import './header-components.test.js';
-// import './file2.test.js';
+// import './header-components.test.js';
+import './make-template.test.js';
