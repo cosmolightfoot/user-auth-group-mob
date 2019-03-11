@@ -2,17 +2,7 @@ const test = QUnit.test;
 
 QUnit.module('make header components');
 
-function makeHeaderHtml() {
-    const html = `
-    <header>
-        <img src="assets/alchemy-logo.png">
-        <h1 class="header-title">Book Finder</h1>
-    </header>
-    `;
-    const template = document.createElement('template');
-    template.innerHTML = html;
-    return template.content;
-}
+import { makeHeaderHtml, makeUserHtml } from '../src/header-components.js';
 
 test('time to write a test', function(assert) {
     
@@ -30,18 +20,7 @@ test('time to write a test', function(assert) {
 
 
 
-function makeUserHtml(user){
-    const html =  /*html*/ `
-    <div class="user-profile">
-        <img src="${user.photoURL}" alt="">
-        <span>${user.displayName}</span>
-        <button id="sign-out-button">Sign Out</button>
-    </div>
-    `;
-    const template = document.createElement('template');
-    template.innerHTML = html;
-    return template.content;
-}
+
 
 test('time to write a test', function(assert) {
     const user = {
