@@ -13,9 +13,10 @@ export function makeHeaderHtml() {
 }
 
 export function makeUserHtml(user){
+    const avatar = user.photoURL || '../assets/default-avatar.png';
     const html = /*html*/ `
     <div class="user-profile">
-        <img src="${user.photoURL}" alt="">
+        <img src="${avatar}" alt="">
         <span>${user.displayName}</span>
         <button id="sign-out-button">Sign Out</button>
     </div>
@@ -37,12 +38,19 @@ export default function loadHeader(options){
     } 
 
     auth.onAuthStateChanged(user => {
+        console.log(user);
         if(user) {
             const userDom = makeUserHtml(user);
+            const signOutButton = userDom.querySelector('button');
+            signOutButton.addEventListener('click', ()=> {
+                auth.signOut();
+            });
+
             headerContainer.appendChild(userDom);
         }
         else {
             //no user
+            window.location = './auth.html';
             console.log('no user go home');
         }
     });
