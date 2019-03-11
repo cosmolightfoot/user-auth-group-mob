@@ -1,3 +1,5 @@
+import { auth } from './firebase.js';
+
 export function makeHeaderHtml() {
     const html = `
     <header>
@@ -21,4 +23,22 @@ export function makeUserHtml(user){
     const template = document.createElement('template');
     template.innerHTML = html;
     return template.content;
+}
+
+const headerContainer = document.getElementById('header-container');
+
+export function loadHeader(){
+    const dom = makeHeaderHtml();
+
+    headerContainer.appendChild(dom);
+
+    auth.onAuthStateChanged(user => {
+        if(user) {
+            console.log('there is a user!!!');
+        }
+        else {
+            //no user
+        }
+    });
+
 }
