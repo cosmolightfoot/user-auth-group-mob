@@ -10,7 +10,7 @@ loadHeader();
 
 window.addEventListener('hashchange', loadQuery);
 
-auth.onAuthStateChange(() => {
+auth.onAuthStateChanged(() => {
     loadQuery();
 });
 

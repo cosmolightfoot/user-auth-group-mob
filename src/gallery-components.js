@@ -1,7 +1,7 @@
 import { auth, favoritesByUserRef } from '../src/firebase.js';
 
 export function makeHtmlTemplate(character){
-    const html= /*html*/`
+    const html = /*html*/`
         <li class="card">
         <span class="favorite-star">☆</span>
             <h1>${character.name}</h1>
@@ -22,44 +22,50 @@ export default function loadGallery(characterArray) {
     characterArray.forEach(character => {
         const dom = makeHtmlTemplate(character);
         const favoriteStar = dom.querySelector('.favorite-star');
-        favoriteStar.addEventListener('click', () => {
-            const userId = auth.currentUser.uid;
-            const userFavoritesRef = favoritesByUserRef.child(userId);
-            const userFavoriteCharacterRef = userFavoritesRef.child(character.id);
-            userFavoriteCharacterRef.once('value')
-                .then(snapshot => {
-                    const value = snapshot.val();
-                    let isFavorite = false;
-                    if(value) {
-                        addFavorite();
+        
+        const userId = auth.currentUser.uid;
+        const userFavoritesRef = favoritesByUserRef.child(userId);
+        const userFavoriteCharacterRef = userFavoritesRef.child(character.id);
+        userFavoriteCharacterRef.once('value')
+            .then(snapshot => {
+                const value = snapshot.val();
+                let isFavorite = false;
+                if(value) {
+                    addFavorite();
+                }
+                else {
+                    removeFavorite();
+                }
+
+                function addFavorite() {
+                    isFavorite = true;
+                    favoriteStar.textContent = '★';
+                    favoriteStar.classList.add('favorite');
+                }
+
+                function removeFavorite() {
+                    isFavorite = false;
+                    favoriteStar.textContent = '☆';
+                    favoriteStar.classList.remove('favorite');
+                }
+
+                favoriteStar.addEventListener('click', () => {
+                    if(isFavorite) {
+                        userFavoriteCharacterRef.remove();removeFavorite();
                     }
                     else {
-                        removeFavorite();
+                        userFavoriteCharacterRef.set({
+                            id: character.id,
+                            title: character.name,
+                            image: character.image,
+                            status: character.status,
+                            species: character.species
+                        });
+                        addFavorite();
                     }
-
-                    function addFavorite() {
-                        isFavorite = true;
-                        favoriteStar.textContent = '★';
-                        favoriteStar.classList.add('favorite');
-                    }
-
-                    function removeFavorite() {
-                        isFavorite = false;
-                        favoriteStar.textContent = '☆';
-                        favoriteStar.classList.remove('favorite');
-                    }
-                    //LINE 63 favoriteStar.addEVLIS
-                    //https://github.com/alchemy-web-bootcamp-winter-2019/movie-db-example/blob/14646d484fb25aa928cd2a9ca8b73351d295c703/src/movies/movies-component.js
-
                 });
-            userFavoriteCharacterRef.set({
-                id: character.id,
-                title: character.name,
-                image: character.image,
-                status: character.status,
-                species: character.species
+                 
             });
-        });
         characterList.appendChild(dom);
 
 
