@@ -1,4 +1,4 @@
-1. Do DDD   
+<!-- 1. Do DDD   
     -search field
     -search button
     -example list item
@@ -19,7 +19,7 @@
         create searchOptions object
         writeSearchToQuery
         update window.location.hash
-        import search-component.js into index
+        import search-component.js into index -->
 
 7. makeSearchURL function
     tdd
@@ -30,6 +30,8 @@
     -readFromQuery(existingQuery)
     -makeSearchURL is called
     -fetch
+
+9. 
 
 
 
