@@ -39,3 +39,11 @@ li h1 {
 li h2 {
     font-size: 50%;
 }
+
+.hidden {
+    display: none;
+}
+
+main {
+    margin-bottom: 75px;
+}

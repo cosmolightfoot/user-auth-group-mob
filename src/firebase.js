@@ -8,5 +8,8 @@ const config = {
 };
 firebase.initializeApp(config);
 export const auth = firebase.auth();
+
+console.log(firebase.database());
 const db = firebase.database();
-export const favoritesByUserRef = db.ref('favorites-by-user');
+export const usersRef = db.ref('users');
+// export const favoritesByUserRef = db.ref('favorites-by-user');
