@@ -1,6 +1,6 @@
 export function writeSearchToQuery(existingQuery, queryOptions) {
     const URL = new URLSearchParams(existingQuery);
-    URL.set('name', 'rick');
+    URL.set('name', queryOptions.name);
     URL.set('page', 1);
     return URL.toString();
 }

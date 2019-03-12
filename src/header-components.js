@@ -38,7 +38,6 @@ export default function loadHeader(options){
     } 
 
     auth.onAuthStateChanged(user => {
-        console.log(user);
         if(user) {
             const userDom = makeUserHtml(user);
             const signOutButton = userDom.querySelector('button');
