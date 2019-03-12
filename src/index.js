@@ -16,8 +16,9 @@ auth.onAuthStateChanged(() => {
 
 function loadQuery() {
     const existingQuery = window.location.hash;
+    console.log('existing query', existingQuery);
     const queryOptions = readFromQuery(existingQuery);
-
+    console.log('query opt', queryOptions);
     const apiURL = makeSearchURL(queryOptions);
     fetch(apiURL).then(response => response.json()).then(body => {
         loadGallery(body.results);
@@ -25,4 +26,3 @@ function loadQuery() {
     });
 }
 
-loadQuery();
