@@ -41,15 +41,7 @@ test('write page to query', assert => {
 });
 
 
-function readFromQuery(searchInfoFromQuery) {
-    const URL = new URLSearchParams(searchInfoFromQuery.slice(1));
-    console.log(URL.get('name'));
-    const searchOptions = {
-        name: URL.get('name'),
-        page: parseInt(URL.get('page'))
-    };
-    return searchOptions;
-}
+
 
 test('read page from query', assert => {
 //arrange

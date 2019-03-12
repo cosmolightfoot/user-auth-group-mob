@@ -21,8 +21,8 @@
         update window.location.hash
         import search-component.js into index -->
 
-7. makeSearchURL function
-    tdd
+<!-- 7. makeSearchURL function
+    tdd -->
 
 
 8. Make LoadQuery Function on index.js

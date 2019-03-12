@@ -13,10 +13,17 @@ export function makeHtmlTemplate(character){
     return template.content;
 }
 
+const characterList = document.getElementById('character-list');
 export default function loadGallery(characterArray) {
-    const characterList = document.getElementById('character-list');
+    clearRows();
     characterArray.forEach(character => {
         const dom = makeHtmlTemplate(character);
         characterList.appendChild(dom);
     });
+}
+
+function clearRows(){
+    while(characterList.children.length){
+        characterList.lastElementChild.remove();
+    }
 }
