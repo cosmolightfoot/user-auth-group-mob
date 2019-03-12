@@ -4,7 +4,6 @@ const config = {
     databaseURL: "https://user-auth-group-mob.firebaseio.com",
     projectId: "user-auth-group-mob"
  
-
 };
 firebase.initializeApp(config);
 export const auth = firebase.auth();
