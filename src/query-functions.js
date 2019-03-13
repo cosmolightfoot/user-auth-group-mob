@@ -14,7 +14,6 @@ export function writePageToQuery(existingQuery, queryOptions) {
 }
 
 export function readFromQuery(searchInfoFromQuery) {
-    console.log('search info from query', searchInfoFromQuery);
     if(!searchInfoFromQuery) {
         const searchOptions = {
             name: '',

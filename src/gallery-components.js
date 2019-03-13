@@ -56,7 +56,7 @@ export default function loadGallery(characterArray) {
                     else {
                         userFavoriteCharacterRef.set({
                             id: character.id,
-                            title: character.name,
+                            name: character.name,
                             image: character.image,
                             status: character.status,
                             species: character.species

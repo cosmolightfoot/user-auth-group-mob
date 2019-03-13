@@ -24,20 +24,28 @@
 <!-- 7. makeSearchURL function
     tdd -->
 
-
+<!-- 
 8. Make LoadQuery Function on index.js
     -called on window hashchange
     -readFromQuery(existingQuery)
     -makeSearchURL is called
     -fetch
 
-9. 
+9. Copy marty's code
+ -->
 
+10. Make Favorite Char List Page
+    -html
+    -js
+    -link to previous css
+    
+11. TDD convert object to arrays
+    -Object.keys()
+    -Object.map()
 
+12. Use loadCharacters on formatted array
 
-
-
-
+** maybe use .on() instead of .once() **
 
 
 

@@ -41,7 +41,7 @@ test('write page to query', assert => {
 });
 
 
-
+import { readFromQuery } from '../src/query-functions.js';
 
 test('read page from query', assert => {
 //arrange

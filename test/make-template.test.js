@@ -14,6 +14,7 @@ test('set up basic template html', function(assert) {
     };
     const expected= /*html*/`
     <li class="card">
+    <span class="favorite-star">☆</span>
         <h1>Rick Sanchez</h1>
         <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg">
         <h2>Status: Alive</h2>
